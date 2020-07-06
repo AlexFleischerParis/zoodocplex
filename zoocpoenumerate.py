@@ -24,7 +24,8 @@ for msol in siter:
     print("cost = ",msol[cost])
     dfsol=concat([dfsol,DataFrame([msol[nbbus40],msol[nbbus30],msol[cost]])],axis=1)
     print("\n")
-dfsol.columns=["nbBus40","nbBus30","cost"]
+dfsol.columns=["sol1","sol2","sol3"]
+
 
 print(dfsol)
 
@@ -32,9 +33,9 @@ print(dfsol)
 
 which gives
 
-  nbBus40  nbBus30  cost
-0        3        4     6
-1        6        5     2
-2     3900     4000  3800
+   sol1  sol2  sol3
+0     3     4     6
+1     6     5     2
+2  3900  4000  3800
 
 """
