@@ -44,7 +44,7 @@ for b in Buses:
 #Add a constraint
 # Number of sizes where we have 1 or 2 buses should be at least 3
 
-mdl.add(sum(mdl.logical_and(1<=mdl.nbBus[b],mdl.nbBus[b]<=2) for b in Buses) >=3)
+mdl.add(mdl.sum(mdl.logical_and(1<=mdl.nbBus[b],mdl.nbBus[b]<=2) for b in Buses) >=3)
 
 mdl.solve()
 
