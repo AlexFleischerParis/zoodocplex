@@ -25,7 +25,7 @@ print(msol[nbbus30]," buses 30 seats")
 
 which gives
 
-6  buses 40 seats
-2  buses 30 seats
+3  buses 40 seats
+6  buses 30 seats
 
 """
