@@ -6,7 +6,7 @@ nbbus30 = mdl.integer_var(name='nbBus30')
 mdl.add_constraint(nbbus40*40 + nbbus30*30 >= 300, 'kids')
 mdl.minimize(nbbus40*500 + nbbus30*400)
 
-mdl.solve()
+mdl.solve(log_output=True,)
 
 mdl.export("c:\\temp\\buses.lp")
 
