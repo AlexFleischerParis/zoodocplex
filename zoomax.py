@@ -12,6 +12,7 @@ mdl.nbBus = {b: mdl.integer_var(name="nbBus"+str(b)) for b in buses}
 mdl.add_constraint(sum(mdl.nbBus[b]*b for b in buses) >= nbKids, 'kids')
 
 # Objective
+# logical constraint is the max of all nbBus
 mdl.minimize(mdl.max(mdl.nbBus[b] for b in buses)) 
 
 mdl.solve(log_output=True,)
