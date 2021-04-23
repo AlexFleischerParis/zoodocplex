@@ -25,10 +25,10 @@ mdl = CpoModel(name='buses')
 mdl.nbBus=mdl.integer_var_dict(Buses,0,1000,name="nbBus")
 
 # Constraint
-mdl.add(sum(mdl.nbBus[b]*b[busSize] for b in Buses) >= nbKids)
+mdl.add(mdl.sum(mdl.nbBus[b]*b[busSize] for b in Buses) >= nbKids)
 
 # Objective
-mdl.minimize(sum(mdl.nbBus[b]*b[busCost] for b in Buses))
+mdl.minimize(mdl.sum(mdl.nbBus[b]*b[busCost] for b in Buses))
 
 msol=mdl.solve()
 
