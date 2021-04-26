@@ -26,10 +26,10 @@ mdl.nbBus = {b: mdl.integer_var(name="nbBus"+str(b[busSize])) for b in Buses}
 
 
 # Constraint
-mdl.add_constraint(sum(mdl.nbBus[b]*b[busSize] for b in Buses) >= nbKids, 'kids')
+mdl.add_constraint(mdl.sum(mdl.nbBus[b]*b[busSize] for b in Buses) >= nbKids, 'kids')
 
 # Objective
-mdl.minimize(sum(mdl.nbBus[b]*b[busCost] for b in Buses))
+mdl.minimize(mdl.sum(mdl.nbBus[b]*b[busCost] for b in Buses))
 
 mdl.solve()
 

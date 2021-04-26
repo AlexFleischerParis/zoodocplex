@@ -28,10 +28,10 @@ mdl.nbBus = mdl.integer_var_list(nbSizes,0,1000,name="nbBus")
 
 
 # Constraint
-mdl.add(sum(mdl.nbBus[b]*Buses[b][busSize] for b in range(0,nbSizes)) >= nbKids)
+mdl.add(mdl.sum(mdl.nbBus[b]*Buses[b][busSize] for b in range(0,nbSizes)) >= nbKids)
 
 # Objective
-mdl.minimize(sum(mdl.nbBus[b]*Buses[b][busCost] for b in range(0,nbSizes)))
+mdl.minimize(mdl.sum(mdl.nbBus[b]*Buses[b][busCost] for b in range(0,nbSizes)))
 
 msol=mdl.solve()
 

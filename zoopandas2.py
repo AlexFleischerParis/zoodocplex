@@ -23,10 +23,10 @@ mdl.nbBus = {b: mdl.integer_var(name="nbBus"+str(b.size)) for b in dfBuses.itert
 
 
 # Constraint
-mdl.add_constraint(sum(mdl.nbBus[b]*b.size for b in dfBuses.itertuples()) >= nbKids, 'kids')
+mdl.add_constraint(mdl.sum(mdl.nbBus[b]*b.size for b in dfBuses.itertuples()) >= nbKids, 'kids')
 
 # Objective
-mdl.minimize(sum(mdl.nbBus[b]*b.cost for b in dfBuses.itertuples()))
+mdl.minimize(mdl.sum(mdl.nbBus[b]*b.cost for b in dfBuses.itertuples()))
 
 mdl.solve()
 

@@ -21,10 +21,10 @@ mdl = Model(name='buses')
 mdl.nbBus=mdl.integer_var_dict(dfBuses.itertuples(),name="nbBus")
 
 # Constraint
-mdl.add_constraint(sum(mdl.nbBus[b]*b.size for b in dfBuses.itertuples()) >= nbKids, 'kids')
+mdl.add_constraint(mdl.sum(mdl.nbBus[b]*b.size for b in dfBuses.itertuples()) >= nbKids, 'kids')
 
 # Objective
-mdl.minimize(sum(mdl.nbBus[b]*b.cost for b in dfBuses.itertuples()))
+mdl.minimize(mdl.sum(mdl.nbBus[b]*b.cost for b in dfBuses.itertuples()))
 
 mdl.solve()
 

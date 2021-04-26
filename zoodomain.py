@@ -9,7 +9,7 @@ mdl.add_constraint(nbbus40*40 + nbbus30*30 >= 300, 'kids')
 mdl.minimize(nbbus40*500 + nbbus30*400)
 
 allowedQuantities=[0,1,3,4,5];
-mdl.add_constraint(1==sum((a==nbbus40) for a in allowedQuantities))
+mdl.add_constraint(1==mdl.sum((a==nbbus40) for a in allowedQuantities))
 
 mdl.solve()
 
