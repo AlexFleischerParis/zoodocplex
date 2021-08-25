@@ -17,9 +17,12 @@ sense="min"
 exprs=[cost,co2emission]
 priorities=[1,2]
 weights=[1,1]
-mdl.set_multi_objective(sense, exprs, priorities, weights, abstols=None, reltols=None, names=None)
+timelimits=[5, 10]
 
-mdl.solve(lex_mipgaps = [0.001, 0.05], log_output=True)
+mdl.set_multi_objective(sense, exprs, priorities, weights, abstols=None,
+                        reltols=None, names=None)
+
+mdl.solve(lex_mipgaps = [0.001, 0.05], log_output=True,lex_timelimits = timelimits)
 
 for v in mdl.iter_integer_vars():
     print(v," = ",v.solution_value)
