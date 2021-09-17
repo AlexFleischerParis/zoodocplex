@@ -5,7 +5,7 @@ nbbus40 = mdl.integer_var(name='nbBus40')
 nbbus30 = mdl.integer_var(name='nbBus30')
 mdl.add_constraint(nbbus40*40 + nbbus30*30 >= 300, 'kids')
 
-#absolute value of nbBus40 - bvBus30
+#absolute value of nbBus40 - nbBus30
 mdl.add_constraint(mdl.abs(nbbus40-nbbus30)<=2)
 
 mdl.minimize(nbbus40*500 + nbbus30*400)
