@@ -10,9 +10,6 @@ mdl.minimize(nbbus40*500 + nbbus30*400)
 
 mdl.solve(log_output=True,)
 
-for v in mdl.iter_integer_vars():
-    print(v," = ",v.solution_value)
-
 mdlbis = Model(name='busesbis')
 nbbus40bis = mdlbis.integer_var(name='nbBus40bis')
 nbbus30bis = mdlbis.integer_var(name='nbBus30bis')
