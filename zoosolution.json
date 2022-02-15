@@ -1,0 +1,1 @@
+{"CPLEXSolution": {"version": "1.0", "header": {"problemName": "buses", "objectiveValue": "3800.0", "solved_by": "cplex_local"}, "variables": [{"index": "0", "name": "nbBus40", "value": "6.0"}, {"index": "1", "name": "nbBus30", "value": "2.0"}], "linearConstraints": [{"name": "kids", "index": 0}]}}

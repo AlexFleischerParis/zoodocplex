@@ -1,0 +1,4 @@
+solution for: buses
+objective: 3800
+nbBus40=6
+nbBus30=2
