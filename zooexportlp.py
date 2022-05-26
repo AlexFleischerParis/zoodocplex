@@ -9,6 +9,8 @@ mdl.minimize(nbbus40*500 + nbbus30*400)
 
 
 mdl.export("c:\\temp\\buses.lp")
+mdl.export("c:\\temp\\buses.sav")
+mdl.export("c:\\temp\\buses.mps")
 
 
 
