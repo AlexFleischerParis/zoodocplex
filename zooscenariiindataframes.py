@@ -1,7 +1,9 @@
 from docplex.mp.model import Model
 import pandas as pd
 
-buses = {'costBus40': [500, 550,600], 'costBus30': [400, 450,440],'nbKids': [300, 320,330]}
+buses = {'costBus40': [500, 550,600], \
+         'costBus30': [400, 450,440],\
+         'nbKids': [300, 320,330]}
 dfBusesScenarii = pd.DataFrame(data=buses)
 
 
