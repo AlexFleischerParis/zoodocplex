@@ -30,7 +30,12 @@ if __name__ == '__main__':
 
     duals = bmr.get_constraint_by_name("kids").dual_value
 
-    print("dual of the 300 kids constraint = ",duals) 
+    print("dual of the 300 kids constraint = ",duals)
+
+    for v in bmr.iter_continuous_vars():
+       print(v," = ",v.solution_value)
+       rc=v.reduced_cost
+       print("reduced cost =",rc)
 
 """
 
@@ -59,5 +64,14 @@ solution for: lp_buses
 objective: 3750.000
 nbBus40 = 7.500
 dual of the 300 kids constraint =  12.5
+
+nbBus40  =  7.5
+reduced cost = 0
+nbBus30  =  0
+reduced cost = 25.0
+
+And we can confirm that if we use only 40 seats buses the marginal cost of a seat within a 40 seats bus is costbus40/40=12.5
+And that if we remove 25 to the price for 30 seats buses then they are as cheap as 40 seats buses.
+
 
 """
