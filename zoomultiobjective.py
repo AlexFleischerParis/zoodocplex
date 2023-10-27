@@ -18,12 +18,12 @@ exprs=[cost,co2emission]
 priorities=[1,2]
 weights=[1,1]
 timelimits=[5, 10]
+reltols=[0.001, 0.05]
 
 mdl.set_multi_objective(sense, exprs, priorities, weights, abstols=None,
                         reltols=None, names=None)
 
-mdl.set_multi_objective_reltols([0.001, 0.05])
-params = mdl.build_multiobj_paramsets(timelimits)
+params = mdl.build_multiobj_paramsets(timelimits = timelimits, mipgaps=reltols)
 
 mdl.solve( log_output=True, parameter_sets=params)
 
