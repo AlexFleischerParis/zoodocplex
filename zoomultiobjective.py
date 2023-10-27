@@ -22,7 +22,10 @@ timelimits=[5, 10]
 mdl.set_multi_objective(sense, exprs, priorities, weights, abstols=None,
                         reltols=None, names=None)
 
-mdl.solve(lex_mipgaps = [0.001, 0.05], log_output=True,lex_timelimits = timelimits)
+mdl.set_multi_objective_reltols([0.001, 0.05])
+params = mdl.build_multiobj_paramsets(timelimits)
+
+mdl.solve( log_output=True, parameter_sets=params)
 
 for v in mdl.iter_integer_vars():
     print(v," = ",v.solution_value)
