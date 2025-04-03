@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////
+// CPO file generated at 2025.04.03-09:12:10 for model: buses
+// Source file: c:/GitHub/zoodocplex/zooexportcpo.py
+///////////////////////////////////////////////////////////////////////////////
+
+//--- Constants ---
+
+//--- Variables ---
+#line 9 "c:/GitHub/zoodocplex/zooexportcpo.py"
+nbBus40 = intVar(0..1000);
+nbBus30 = intVar(0..1000);
+
+//--- Expressions ---
+#line 9 "c:/GitHub/zoodocplex/zooexportcpo.py"
+nbBus40 * 40 + nbBus30 * 30 >= 300;
+#line 10
+minimize(nbBus40 * 500 + nbBus30 * 400);
